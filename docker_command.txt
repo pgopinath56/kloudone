@@ -1,0 +1,23 @@
+sudo docker pull nginx
+#Docker command to download nginx webserver image file
+
+sudo docker run -it -p 80:80 -d nginx
+#The above command is used to run the container with docker image.
+
+Sudo docker ps
+# Command to see the running container and the container id's.
+
+sudo docker build . -t gopinath56/test1
+#The above command build the docker image from the dockerfile in our local directory and build the image as specified. I have attached the Dockerfile commands in the repository.
+
+sudo docker login
+#This command is used to login into dockerhub account with username and Password.
+
+sudo docker push gopinath56/test1:latest
+#The above command push the built docker image in the docker hub private registery and can be viewed in dockerhub account.
+
+sudo docker pull gopinath56/test1:latest
+#This command can be used to pull the docker image from the repository.
+
+sudo docker run -it -p 80:80 -d gopinath56/test1
+#This command will run the nginix webserver in port 80.
